@@ -38,6 +38,8 @@ Use mensagens curtas e objetivas:
 * fix: correção de bug
 * docs: documentação
 * refactor: melhoria de código
+* config: configurações globais ou locais o ambiente/projeto
+* remove: remoção de algum arquivo ou dado
 * test: testes
 
 Exemplo:
