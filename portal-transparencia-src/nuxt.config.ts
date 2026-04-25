@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
@@ -10,6 +11,16 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+  ui: {
+    theme: {
+      colors: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'quaternary'
+      ]
+    }
+  },
 
   routeRules: {
     '/': { prerender: true }
@@ -25,4 +36,5 @@ export default defineNuxtConfig({
       }
     }
   }
+
 })
