@@ -29,19 +29,23 @@ useSeoMeta({
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Início',
-    to: '/'
+    to: '/#inicio'
   },
   {
-    label: 'Sobre',
+    label: 'Pesquisar',
     to: '/#sobre'
   },
   {
-    label: 'Serviços',
-    to: '/#servicos'
+    label: 'Ajuda',
+    to: '/#ajuda'
   },
   {
-    label: 'Outros Orgãos',
-    to: '/#outros'
+    label: 'Presença do Estado',
+    to: '/#presencaDoEstado'
+  },
+  {
+    label: 'Outros sites Institucionais',
+    to: '/#outrosSitesInstitucionais'
   },
   {
     label: 'Área do Fiscal',
