@@ -42,6 +42,10 @@ const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Outros Orgãos',
     to: '/#outros'
+  },
+  {
+    label: 'Área do Fiscal',
+    to: '/AreaDoFiscal'
   }
 ])
 </script>

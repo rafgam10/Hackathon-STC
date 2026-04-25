@@ -11,6 +11,10 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  colorMode: {
+    preference: 'light'
+  },
   ui: {
     theme: {
       colors: [
@@ -21,7 +25,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-
   routeRules: {
     '/': { prerender: true }
   },
