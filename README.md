@@ -45,7 +45,7 @@ Liste as principais tecnologias empregadas no desenvolvimento:
 
 - **Frontend**: JavaScript, TypeScript, Vue.js, Nuxt.js, Tailwind CSS
 - **APIs**: API do Portal da Transparência do Maranhão (https://transparencia.ma.gov.br/api/doc#/Despesas/356ae66617049bac05e7d9c87cb5589e)
-- **Outras ferramentas**: Figma ou Stitch para design de interface
+- **Outras ferramentas**: Figma, Stitch para design de interface, Vencel deploy do projeto
 
 ## Arquitetura
 
