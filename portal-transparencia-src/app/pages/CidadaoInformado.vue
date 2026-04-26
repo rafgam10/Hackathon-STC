@@ -6,27 +6,27 @@ const opcoes = ref('Opções')
 
 const gridButtons = ref([
   {
-    title: 'Estado',
-    description: 'Visão geral das receitas e despesas consolidadas do Governo do Maranhão.',
+    title: 'Receitas e Gastos do Governo',
+    description: 'Acompanhe as receitas arrecadadas e despesas realizadas pelo Governo do Maranhão de forma consolidada e transparente.',
     icon: 'material-symbols:account-balance',
     links: ['Gráficos Consolidados do MA']
   },
   {
-    title: 'Unidade Gestora',
-    description: 'Dados detalhados por Secretaria, Autarquia ou Fundação estadual.',
+    title: 'Secretarias e Instituições',
+    description: 'Consulte dados de receitas e gastos de cada Secretaria, Autarquia ou Fundação do Estado do Maranhão.',
     icon: 'ix:user-management',
     links: ['Secretaria da Educação', 'Casa Cívil', 'Polícia Militar', 'Quero Escolher Outra Unidade']
 
   },
   {
     title: 'Funções',
-    description: 'Gastos agrupados por áreas de atuação como Saúde, Educação e Segurança.',
+    description: 'Visualize como os recursos públicos são distribuídos entre as principais funções do governo: Saúde, Educação, Segurança e outras.',
     icon: 'bxs:institution',
     links: ['Educação', 'Segurança', 'Saúde', 'Quero escolher outra função']
   },
   {
     title: 'Programas',
-    description: 'Acompanhamento dos investimentos em programas governamentais específicos.',
+    description: 'Acompanhe os investimentos e gastos em programas governamentais específicos voltados para a população.',
     icon: 'material-symbols:handshake',
     links: ['Saúde para Todos', 'Mais segurança', 'Quero escolher outro programa']
   }
