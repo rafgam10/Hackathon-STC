@@ -95,7 +95,7 @@ const cardsAbaixo = ref([
       <div class="flex flex-col items-center gap-7 m-4 sm:m-7 justify-center">
 
         <UPageGrid class="w-full">
-          <UButton variant="outline" icon-size="3xl" sm:icon-size="4xl"
+          <UButton variant="outline" color="quaternary" icon-size="3xl" sm:icon-size="4xl"
             class="flex flex-col p-3 sm:p-4 text-lg sm:text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
             type="button" @click="apertarBotao" v-for="(card, index) in cards" :key="index" v-bind="card">
             {{ card.title }}
@@ -108,7 +108,7 @@ const cardsAbaixo = ref([
       <div class="flex flex-col items-center gap-7 justify-center">
         <USeparator class="w-[80%]" />
         <UPageGrid class="w-full">
-          <UButton variant="outline" icon-size="4xl" sm:icon-size="7xl"
+          <UButton variant="outline" color="quaternary" icon-size="4xl" sm:icon-size="7xl"
             class="flex flex-col p-3 sm:p-4 text-lg sm:text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
             type="button" @click="apertarBotao" v-for="(card, index) in cardsAbaixo" :key="index" v-bind="card">
             {{ card.title }}
