@@ -4,9 +4,9 @@ import type { ChangelogVersionProps } from '@nuxt/ui'
 
 function formatDatePtBR(isoDate: string): string {
   const [year, month, day] = isoDate.split('-').map(Number)
-  const date = new Date(year, month, day)
+  const date = new Date(year, month - 1, day)
   return new Intl.DateTimeFormat('pt-BR', {
-   // day: 'numeric',
+    // day: 'numeric',
     month: 'numeric',
     year: 'numeric',
   }).format(date)
@@ -150,7 +150,7 @@ const versions = ref<ChangelogVersionProps[]>([
 <template>
   <div class="flex flex-col p-2">
     <UPageHero
-      title="História do Portal"
+      title="História do Portal"]  
       :ui="{
         container: 'relative z-10 py-16 lg:py-20'
       }"

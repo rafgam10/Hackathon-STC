@@ -41,13 +41,13 @@ const helpItems = [
 const categories: Category[] = [
   {
     id: 'consulta_cidada',
-    label: 'Consulta Cidadã',
+    label: 'Comece aqui',
     icon: 'i-lucide-search',
     color: 'primary',
     options: [
       { label: 'Como consultar?', icon: 'i-lucide-search', to: '/CidadaoInformado' },
       { label: 'Estado', icon: 'i-lucide-user', to: '#' },
-      { label: 'Unidade Gestora', icon: 'i-lucide-file-text', to: '#' },
+      { label: 'Secretarias e Instituições', icon: 'i-lucide-file-text', to: '#' },
       { label: 'Funções', icon: 'i-lucide-bar-chart-3', to: '#' },
       { label: 'Programas', icon: 'i-lucide-package', to: '#' }
     ]
