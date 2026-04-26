@@ -91,8 +91,3 @@ Fluxo:
 * git push
 * git checkout -b nome-da-branch
 
----
-
-## Objetivo
-
-Organização, colaboração rápida e evitar conflitos durante o hackathon 🚀
