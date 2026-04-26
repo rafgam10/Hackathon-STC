@@ -12,6 +12,7 @@ const cards = ref([
     title: 'Despesas',
     description: 'Acompanhe detalhadamente para onde vai cada centavo do imposto, consultando gastos por secretaria, fornecedores e categorias.',
     icon: 'material-symbols:shopping-cart-outline',
+    to: './Despesas'
   },
   {
     title: 'Receitas',

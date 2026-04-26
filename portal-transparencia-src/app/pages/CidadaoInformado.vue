@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { button } from '#build/ui';
 import { ref } from 'vue';
-
-const opcoes = ref('Opções')
 
 const gridButtons = ref([
   {
     title: 'Receitas e Gastos do Governo',
     description: 'Acompanhe as receitas arrecadadas e despesas realizadas pelo Governo do Maranhão de forma consolidada e transparente.',
     icon: 'material-symbols:account-balance',
-    links: ['Gráficos Consolidados do MA']
+    links: ['Gráficos Consolidados do MA'],
+    padraoSelect: 'Selecione a Receita'
   },
   {
     title: 'Secretarias e Instituições',
     description: 'Consulte dados de receitas e gastos de cada Secretaria, Autarquia ou Fundação do Estado do Maranhão.',
     icon: 'ix:user-management',
-    links: ['Secretaria da Educação', 'Casa Cívil', 'Polícia Militar', 'Quero Escolher Outra Unidade']
-
+    links: ['Secretaria da Educação', 'Casa Cívil', 'Polícia Militar', 'Quero Escolher Outra Unidade'],
+    padraoSelect: 'Selecione a Instituição'
   },
   {
     title: 'Funções',
     description: 'Visualize como os recursos públicos são distribuídos entre as principais funções do governo: Saúde, Educação, Segurança e outras.',
     icon: 'bxs:institution',
-    links: ['Educação', 'Segurança', 'Saúde', 'Quero escolher outra função']
+    links: ['Educação', 'Segurança', 'Saúde', 'Quero escolher outra função'],
+    padraoSelect: 'Selecione o Orgão'
   },
   {
     title: 'Programas',
     description: 'Acompanhe os investimentos e gastos em programas governamentais específicos voltados para a população.',
     icon: 'material-symbols:handshake',
-    links: ['Saúde para Todos', 'Mais segurança', 'Quero escolher outro programa']
+    links: ['Saúde para Todos', 'Mais segurança', 'Quero escolher outro programa'],
+    padraoSelect: 'Selecione o Programa'
   }
 ])
 
@@ -60,13 +60,16 @@ Nela, buscamos apresentar diversas informações em linguagem simples, acessíve
         <UPageGrid class="p-4 sm:p-6 w-full" :ui="{
           base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8'
         }">
-          <UPageCard class="light:shadow-[0px_0px_8px_#292929]" :icon="card.icon" v-for="(card, index) in gridButtons" :key="index">
-            <div class="flex flex-col gap-3 sm:gap-4 h-full">
-              <h3 class="text-base sm:text-lg font-semibold light:text-black">{{ card.title }}</h3>
+          <UPageCard class="light:shadow-[0px_0px_8px_#292929]" 
+          :ui="{
+                    container: 'relative flex flex-col flex-1 lg:grid gap-x-8 gap-y-0 p-4 sm:p-6'
+          }" :icon="card.icon" v-for="(card, index) in gridButtons" :key="index">
+            <div class="flex flex-col gap-3 sm:gap-4">
+              <h3 class=" sm:text-lg font-semibold light:text-black">{{ card.title }}</h3>
               <p class="text-sm text-slate-600">
                 {{ card.description }}
               </p>
-              <USelect v-model="opcoes" class="flex items-center justify-center w-full" :items="card.links" />
+              <USelect v-model="card.padraoSelect" class="flex items-center justify-center w-full" :items="card.links" />
             </div>
           </UPageCard>
         </UPageGrid>
