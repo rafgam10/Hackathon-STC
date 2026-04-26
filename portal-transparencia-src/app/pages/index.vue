@@ -59,7 +59,7 @@ const categories: Category[] = [
     color: 'secondary',
     options: [
       { label: 'História do portal', icon: 'i-lucide-book-open', to: '/HistoriaPortal' },
-      { label: 'Sobre o portal', icon: 'i-lucide-target', to: '#' },
+      { label: 'Sobre o portal', icon: 'i-lucide-target', to:'/sobre'},
       { label: 'Selo diamante', icon: 'i-lucide-gem', to: '#' },
       { label: 'Nossos números', icon: 'i-lucide-bar-chart-3', to: '#' },
       { label: 'Portal antigo', icon: 'i-lucide-archive', to: '#' }
