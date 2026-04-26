@@ -12,7 +12,7 @@ async function testar() {
     }catch(error){
         console.error(error)
     }
-
+    
     // try{
     //     const dados = await utils.Obter_Consulta_Despesas(2023, 2, 110122)
     //     console.log("✅ Sucesso! Dados:", dados);
