@@ -26,7 +26,15 @@ export default {
                     }
                 }
             )
-            return response.data;
+            const despesas = response.data;
+            
+            const totais = despesas.reduce((acc: any, item: any) => ({
+                total_empenho: acc.total_empenho + (parseFloat(item.valor_emp) || 0),
+                total_liquido: acc.total_liquido + (parseFloat(item.valor_nl) || 0),
+                total_pago: acc.total_pago + (parseFloat(item.valor_op) || 0)
+            }), { total_empenho: 0, total_liquido: 0, total_pago: 0 });
+
+            return totais;
         } catch(error: any) {
             console.error("Erro:", error.message);
             throw error;
@@ -49,6 +57,43 @@ export default {
             console.error(error)
             throw error;
         }
+    },
+
+    Calcular_Totais_Despesas(despesas: any[]) {
+        if (!Array.isArray(despesas) || despesas.length === 0) {
+            return {
+                total_empenho: 0,
+                total_liquido: 0,
+                total_pago: 0,
+                quantidade_registros: 0
+            };
+        }
+
+        const totais = despesas.reduce((acc, despesa) => {
+            return {
+                total_empenho: acc.total_empenho + (parseFloat(despesa.valor_emp) || 0),
+                total_liquido: acc.total_liquido + (parseFloat(despesa.valor_nl) || 0),
+                total_pago: acc.total_pago + (parseFloat(despesa.valor_op) || 0)
+            };
+        }, { total_empenho: 0, total_liquido: 0, total_pago: 0 });
+
+        return {
+            ...totais,
+            quantidade_registros: despesas.length
+        };
+    },
+
+    Extrair_Valores_Despesas(despesas: any[]) {
+        if (!Array.isArray(despesas)) return [];
+
+        return despesas.map(despesa => ({
+            empenho: parseFloat(despesa.valor_emp) || 0,
+            liquido: parseFloat(despesa.valor_nl) || 0,
+            pago: parseFloat(despesa.valor_op) || 0,
+            descricao: despesa.descricao,
+            credor: despesa.credor_nome,
+            data: despesa.data
+        }));
     }
     
 }
