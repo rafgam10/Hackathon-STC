@@ -1,34 +1,34 @@
 <script setup lang="ts">
-// import Testimg from '~/assets/imgs/teste.jpg'
+import { button } from '#build/ui';
+import { ref } from 'vue';
 
-function Button() {
-  console.log('botao apertado')
-}
+const opcoes = ref('Opções')
 
 const gridButtons = ref([
   {
     title: 'Estado',
     description: 'Visão geral das receitas e despesas consolidadas do Governo do Maranhão.',
-    nomeBotao: 'GRÁFICOS CONSOLIDADOS',
-    icon: 'material-symbols:account-balance'
+    icon: 'material-symbols:account-balance',
+    links: ['Gráficos Consolidados do MA']
   },
   {
     title: 'Unidade Gestora',
     description: 'Dados detalhados por Secretaria, Autarquia ou Fundação estadual.',
-    nomeBotao: 'BUSCA POR ÓRGÃO',
-    icon: 'ix:user-management'
+    icon: 'ix:user-management',
+    links: ['Secretaria da Educação', 'Casa Cívil', 'Polícia Militar', 'Quero Escolher Outra Unidade']
+
   },
   {
     title: 'Funções',
     description: 'Gastos agrupados por áreas de atuação como Saúde, Educação e Segurança.',
-    nomeBotao: 'DISTRIBUIÇÃO SETORIAL',
-    icon: ''
+    icon: 'bxs:institution',
+    links: ['Educação', 'Segurança', 'Saúde', 'Quero escolher outra função']
   },
   {
     title: 'Programas',
     description: 'Acompanhamento dos investimentos em programas governamentais específicos.',
-    nomeBotao: 'METAS E INVESTIMENTOS',
-    icon: ''
+    icon: 'material-symbols:handshake',
+    links: ['Saúde para Todos', 'Mais segurança', 'Quero escolher outro programa']
   }
 ])
 
@@ -36,11 +36,11 @@ const gridButtons = ref([
 
 <template>
   <div class="min-h-screen text-white">
-    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 space-y-10">
+    <div class="max-w-7xl mx-auto p-5">
       <!-- Hero / instruções -->
-      <UCard class="">
-        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
+      <UCard class="light:shadow-[0px_0px_8px_#292929]">
+        <div class="flex flex-col justify-center items-center p-8 lg:flex-row lg:items-center">
+          <div class="flex flex-col justify-center items-center max-w-2xl">
             <p class="text-sm uppercase tracking-[0.35em] text-emerald-700">
               Consulta Cidadã
             </p>
@@ -48,8 +48,11 @@ const gridButtons = ref([
               Explore e entenda como o Estado utiliza recursos públicos
             </h1>
             <p class="mt-5 text-base leading-7 text-slate-600">
-              Explore e entenda como o Estado utiliza os recursos públicos de forma clara e acessível. Selecione o tipo,
-              aplique filtros e analise os dados com facilidade.
+              Entendemos a importância de ser um cidadão informado.
+
+Por isso montamos essa área para você
+
+Nela, buscamos apresentar diversas informações em linguagem simples, acessível e estruturada
             </p>
           </div>
         </div>
@@ -57,20 +60,15 @@ const gridButtons = ref([
         <UPageGrid class="p-6 w-6xl" :ui="{
           base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'
         }">
-          <UButton variant="outline"
-            class="light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
-            v-for="(card, index) in gridButtons" :key="index">
-            <div class="flex flex-col p-6 gap-3">
-              <UIcon :name="card.icon" size="40" />
-              <h3 class=" text-lg font-semibold">{{ card.title }}</h3>
+          <UPageCard class="light:shadow-[0px_0px_8px_#292929]" :icon="card.icon" v-for="(card, index) in gridButtons" :key="index">
+            <div class="flex flex-col gap-4 h-full">
+              <h3 class=" text-lg font-semibold light:text-black">{{ card.title }}</h3>
               <p class=" text-sm text-slate-600">
                 {{ card.description }}
               </p>
-              <p class=" text-sm font-semibold text-emerald-700">
-                {{ card.nomeBotao }}
-              </p>
+              <USelect v-model="opcoes" class="flex items-center justify-center w-full" :items="card.links" />
             </div>
-          </UButton>
+          </UPageCard>
         </UPageGrid>
       </UCard>
     </div>
