@@ -208,8 +208,6 @@ Expandir a solução para todo o portal, aprofundar integrações com dados em t
 
 ## 📎 Links úteis
 
-* Apresentação:
-* Vídeo demo:
-* Protótipo (Figma):
+* Link do Projeto: https://hackathon-stc-avna.vercel.app/
 
 
