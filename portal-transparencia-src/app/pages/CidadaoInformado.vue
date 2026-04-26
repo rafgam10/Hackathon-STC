@@ -36,15 +36,15 @@ const gridButtons = ref([
 
 <template>
   <div class="min-h-screen text-white">
-    <div class="max-w-7xl mx-auto p-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
       <!-- Hero / instruções -->
       <UCard class="light:shadow-[0px_0px_8px_#292929]">
-        <div class="flex flex-col justify-center items-center p-8 lg:flex-row lg:items-center">
-          <div class="flex flex-col justify-center items-center max-w-2xl">
+        <div class="flex flex-col justify-center items-center p-4 sm:p-8 lg:flex-row lg:items-center">
+          <div class="flex flex-col justify-center items-center max-w-2xl text-center lg:text-left">
             <p class="text-sm uppercase tracking-[0.35em] text-emerald-700">
               Consulta Cidadã
             </p>
-            <h1 class="mt-4 text-3xl font-semibold sm:text-4xl light:text-black">
+            <h1 class="mt-4 text-2xl sm:text-3xl font-semibold sm:text-4xl light:text-black">
               Explore e entenda como o Estado utiliza recursos públicos
             </h1>
             <p class="mt-5 text-base leading-7 text-slate-600">
@@ -57,13 +57,13 @@ Nela, buscamos apresentar diversas informações em linguagem simples, acessíve
           </div>
         </div>
 
-        <UPageGrid class="p-6 w-6xl" :ui="{
-          base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'
+        <UPageGrid class="p-4 sm:p-6 w-full" :ui="{
+          base: 'relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8'
         }">
           <UPageCard class="light:shadow-[0px_0px_8px_#292929]" :icon="card.icon" v-for="(card, index) in gridButtons" :key="index">
-            <div class="flex flex-col gap-4 h-full">
-              <h3 class=" text-lg font-semibold light:text-black">{{ card.title }}</h3>
-              <p class=" text-sm text-slate-600">
+            <div class="flex flex-col gap-3 sm:gap-4 h-full">
+              <h3 class="text-base sm:text-lg font-semibold light:text-black">{{ card.title }}</h3>
+              <p class="text-sm text-slate-600">
                 {{ card.description }}
               </p>
               <USelect v-model="opcoes" class="flex items-center justify-center w-full" :items="card.links" />

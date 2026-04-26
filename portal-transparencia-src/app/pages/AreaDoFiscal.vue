@@ -85,20 +85,20 @@ const cardsAbaixo = ref([
 </script>
 
 <template>
-  <div class="flex flex-col w-full justify-center items-center">
-    <UCard class="w-[80%] flex flex-col justify-center light:shadow-[0px_0px_8px_#292929]">
+  <div class="flex flex-col w-full justify-center items-center px-4 sm:px-6 lg:px-8">
+    <UCard class="w-full max-w-7xl flex flex-col justify-center light:shadow-[0px_0px_8px_#292929]">
       <UPageHero class="mb-[-1.5rem]" title="Área Fiscal" description="Explore os bastidores da gestão pública." :ui="{
         container: 'flex flex-col lg:grid py-24 sm:py-32 lg:py-10 gap-16 sm:gap-y-10'
       }" />
 
-      <div class="flex flex-col items-center gap-7 m-7 justify-center">
+      <div class="flex flex-col items-center gap-7 m-4 sm:m-7 justify-center">
 
-        <UPageGrid class="w-6xl">
-          <UButton variant="outline" icon-size="4xl"
-            class="flex flex-col p-4 text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
+        <UPageGrid class="w-full">
+          <UButton variant="outline" icon-size="3xl" sm:icon-size="4xl"
+            class="flex flex-col p-3 sm:p-4 text-lg sm:text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
             type="button" @click="apertarBotao" v-for="(card, index) in cards" :key="index" v-bind="card">
             {{ card.title }}
-            <p class="text-sm text-neutral-500">{{ card.description }}</p>
+            <p class="text-xs sm:text-sm text-neutral-500">{{ card.description }}</p>
           </UButton>
         </UPageGrid>
 
@@ -106,12 +106,12 @@ const cardsAbaixo = ref([
 
       <div class="flex flex-col items-center gap-7 justify-center">
         <USeparator class="w-[80%]" />
-        <UPageGrid class="w-6xl">
-          <UButton variant="outline" icon-size="7xl"
-            class="flex flex-col p-4 text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
+        <UPageGrid class="w-full">
+          <UButton variant="outline" icon-size="4xl" sm:icon-size="7xl"
+            class="flex flex-col p-3 sm:p-4 text-lg sm:text-xl justify-center items-center light:shadow-[0px_0px_8px_#292929] hover:scale-[1.05] active:scale-[1.085] transition-transform duration-200 ease-out cursor-pointer"
             type="button" @click="apertarBotao" v-for="(card, index) in cardsAbaixo" :key="index" v-bind="card">
             {{ card.title }}
-            <p class="text-sm text-neutral-500">{{ card.description }}</p>
+            <p class="text-xs sm:text-sm text-neutral-500">{{ card.description }}</p>
           </UButton>
         </UPageGrid>
 
