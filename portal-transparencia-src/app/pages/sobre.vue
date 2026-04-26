@@ -62,7 +62,7 @@ const cards = ref([
         <UPageCard icon="i-lucide-check-circle" title="Linguagem Simples" description="Traduz informações técnicas em dados compreensíveis." />
         <UPageCard icon="i-lucide-layout-grid" title="Áreas Temáticas" description="Organização que facilita a pesquisa por assunto." />
         <UPageCard icon="i-lucide-search" title="Busca Avançada" description="Filtros por órgão, fornecedor e período." />
-        <UPageCard icon="i-lucide-accessibility" title="Acessibilidade" description="Compatibilidade total com leitores de tela." />
+        <UPageCard icon="i-lucide-eye" title="Acessibilidade" description="Compatibilidade total com leitores de tela." />
         <UPageCard icon="i-lucide-database" title="Dados Abertos" description="Dados reutilizáveis para cidadãos e pesquisadores." />
       </UPageGrid>
     </div>

@@ -146,6 +146,7 @@ const versions = ref<ChangelogVersionProps[]>([
 ])
 </script>
 
+
 <template>
   <div class="flex flex-col p-2">
     <UPageHero
@@ -154,6 +155,32 @@ const versions = ref<ChangelogVersionProps[]>([
         container: 'relative z-10 py-16 lg:py-20'
       }"
     />
+
+    <UContainer class="pb-10 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <div class="text-left">
+        <h3 class="text-xl font-bold flex items-center gap-2 mb-4">
+          <UIcon name="i-lucide-lightbulb" class="text-primary w-6 h-6" />
+          Um novo conceito
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          O Nosso Portal foi idealizado tendo a Navegação simples como conceito e objetivando dar mais valor a quem busca informação. A partir deste conceito, reformulamos inteiramente o site, que agora dispõe de nova apresentação visual, de informações em diversos níveis de agregação e de mecanismos que facilitam sua navegação, 
+          tornando-o mais simples e intuitivo.
+        </p>
+      </div>
+
+      <div class="text-left">
+        <h3 class="text-xl font-bold flex items-center gap-2 mb-4">
+          <UIcon name="i-lucide-hourglass" class="text-primary w-6 h-6" />
+          Linha do tempo
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          Convidamos você a conhecer alguns eventos que marcaram nossa trajetória ao longo desses anos, tais como resultados de avaliações, reconhecimentos, lançamentos, número de visualizações, inclusão de novas funcionalidades. A ideia é evoluirmos conforme evoluem as necessidades dos cidadãos por transparência.
+        </p>
+      </div>
+
+    </UContainer>
+
     <UPageCard class="w-full md:w-5xl md:mx-auto py-10">
       <UChangelogVersions
         :versions="versions"
