@@ -1,12 +1,14 @@
 export default defineAppConfig({
+
   ui: {
     colors: {
       primary: 'blue',
-      secondary: 'amber',
-      tertiary: 'red',
-      quaternary: 'emerald',
+      secondary: 'yellow',
+      tertiary: 'emerald',
+      quaternary: 'red',
       neutral: 'slate'
     }
+
   },
 
   socials: [

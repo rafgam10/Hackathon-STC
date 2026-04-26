@@ -33,7 +33,7 @@ const items = computed<NavigationMenuItem[]>(() => [
   },
   {
     label: 'Pesquisar',
-    to: '/#sobre'
+    to: '/#pesquisar'
   },
   {
     label: 'Ajuda',
@@ -93,6 +93,8 @@ const items = computed<NavigationMenuItem[]>(() => [
       <template #body>
         <UNavigationMenu
           :items="items"
+          variant="link"
+          color="neutral"
           orientation="vertical"
           class="-mx-2.5"
         />
